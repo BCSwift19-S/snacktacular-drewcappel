@@ -20,6 +20,8 @@
 		C4212925226C0F9B00441A9C /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */; };
 		C4212927226C1F2A00441A9C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212926226C1F2A00441A9C /* Review.swift */; };
 		C4212929226C2DD800441A9C /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212928226C2DD800441A9C /* Reviews.swift */; };
+		C421292B226C431600441A9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421292A226C431500441A9C /* Photo.swift */; };
+		C421292D226C43ED00441A9C /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C421292C226C43ED00441A9C /* Photos.swift */; };
 		C48640D22251921600E5DC9B /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D12251921600E5DC9B /* Spot.swift */; };
 		C48640D42251923C00E5DC9B /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D32251923C00E5DC9B /* Spots.swift */; };
 		C4C9F83D22696D6300358156 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9F83C22696D6300358156 /* Double+roundTo.swift */; };
@@ -44,6 +46,8 @@
 		C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		C4212926226C1F2A00441A9C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C4212928226C2DD800441A9C /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		C421292A226C431500441A9C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C421292C226C43ED00441A9C /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		C48640D12251921600E5DC9B /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		C48640D32251923C00E5DC9B /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		C4C9F83C22696D6300358156 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				C48640D12251921600E5DC9B /* Spot.swift */,
 				C4212928226C2DD800441A9C /* Reviews.swift */,
 				C4212926226C1F2A00441A9C /* Review.swift */,
+				C421292C226C43ED00441A9C /* Photos.swift */,
+				C421292A226C431500441A9C /* Photo.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
@@ -319,8 +325,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C421292B226C431600441A9C /* Photo.swift in Sources */,
 				C4212929226C2DD800441A9C /* Reviews.swift in Sources */,
 				3E8390E2206597F600512DEA /* SpotsListViewController.swift in Sources */,
+				C421292D226C43ED00441A9C /* Photos.swift in Sources */,
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,

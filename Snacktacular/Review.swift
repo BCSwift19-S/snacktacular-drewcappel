@@ -36,6 +36,7 @@ class Review {
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewerUserID = dictionary["reviewerUserID"] as! String
         let date = dictionary["date"] as! Date? ?? Date() // causing a crash due to data type issue, 9.15
+        // try using today's date Date() in the convenience init below
         self.init(title: title, text: text, rating: rating, reviewerUserID: reviewerUserID, date: date, documentID: "")
     }
     
