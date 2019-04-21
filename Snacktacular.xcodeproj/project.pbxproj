@@ -19,6 +19,7 @@
 		6A3CEF3D0230982CCA670C46 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CAB35A4E599C3A1E8A022A8 /* Pods_Snacktacular.framework */; };
 		C4212925226C0F9B00441A9C /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */; };
 		C4212927226C1F2A00441A9C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212926226C1F2A00441A9C /* Review.swift */; };
+		C4212929226C2DD800441A9C /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212928226C2DD800441A9C /* Reviews.swift */; };
 		C48640D22251921600E5DC9B /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D12251921600E5DC9B /* Spot.swift */; };
 		C48640D42251923C00E5DC9B /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D32251923C00E5DC9B /* Spots.swift */; };
 		C4C9F83D22696D6300358156 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9F83C22696D6300358156 /* Double+roundTo.swift */; };
@@ -42,6 +43,7 @@
 		58801B3937337D45D192E4B3 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
 		C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		C4212926226C1F2A00441A9C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C4212928226C2DD800441A9C /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		C48640D12251921600E5DC9B /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		C48640D32251923C00E5DC9B /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		C4C9F83C22696D6300358156 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				C48640D32251923C00E5DC9B /* Spots.swift */,
 				C48640D12251921600E5DC9B /* Spot.swift */,
+				C4212928226C2DD800441A9C /* Reviews.swift */,
 				C4212926226C1F2A00441A9C /* Review.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4212929226C2DD800441A9C /* Reviews.swift in Sources */,
 				3E8390E2206597F600512DEA /* SpotsListViewController.swift in Sources */,
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
