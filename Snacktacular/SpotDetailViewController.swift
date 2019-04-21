@@ -28,6 +28,8 @@ class SpotDetailViewController: UIViewController {
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     
+    var reviews: [Review] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +63,27 @@ class SpotDetailViewController: UIViewController {
         mapView.setRegion(region, animated: true)
         updateUserInterface()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        spot.name = nameField.text!
+        spot.address = addressField.text!
+        switch segue.identifier ?? "" {
+        case "AddReview":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as! ReviewTableViewController
+            destination.spot = spot
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: selectedIndexPath, animated: true)
+            }
+        case "ShowReview":
+            let destination = segue.destination as! ReviewTableViewController
+            destination.spot = spot
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.review = reviews[selectedIndexPath.row]
+        default:
+            print("*** ERROR: Did not have segue")
+        }
     }
     
     func showAlert(title: String, message: String) {
@@ -105,6 +128,7 @@ class SpotDetailViewController: UIViewController {
     }
     
     @IBAction func reviewButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "AddReview", sender: nil)
     }
     
     @IBAction func lookupPlacePressed(_ sender: UIBarButtonItem) {

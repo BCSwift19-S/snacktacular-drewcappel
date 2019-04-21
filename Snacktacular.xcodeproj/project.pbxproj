@@ -17,6 +17,8 @@
 		3E8390E7206597F600512DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E6206597F600512DEA /* Assets.xcassets */; };
 		3E8390EA206597F600512DEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E8206597F600512DEA /* LaunchScreen.storyboard */; };
 		6A3CEF3D0230982CCA670C46 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CAB35A4E599C3A1E8A022A8 /* Pods_Snacktacular.framework */; };
+		C4212925226C0F9B00441A9C /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */; };
+		C4212927226C1F2A00441A9C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4212926226C1F2A00441A9C /* Review.swift */; };
 		C48640D22251921600E5DC9B /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D12251921600E5DC9B /* Spot.swift */; };
 		C48640D42251923C00E5DC9B /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48640D32251923C00E5DC9B /* Spots.swift */; };
 		C4C9F83D22696D6300358156 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C9F83C22696D6300358156 /* Double+roundTo.swift */; };
@@ -38,6 +40,8 @@
 		3E8390E9206597F600512DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E8390EB206597F600512DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58801B3937337D45D192E4B3 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
+		C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		C4212926226C1F2A00441A9C /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C48640D12251921600E5DC9B /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		C48640D32251923C00E5DC9B /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		C4C9F83C22696D6300358156 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
@@ -82,11 +86,13 @@
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				C48640D32251923C00E5DC9B /* Spots.swift */,
 				C48640D12251921600E5DC9B /* Spot.swift */,
+				C4212926226C1F2A00441A9C /* Review.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				C4212924226C0F9B00441A9C /* ReviewTableViewController.swift */,
 				C4C9F83C22696D6300358156 /* Double+roundTo.swift */,
 				C4C9F83E2269722700358156 /* UIView+addBorder.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
@@ -314,6 +320,8 @@
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
+				C4212925226C0F9B00441A9C /* ReviewTableViewController.swift in Sources */,
+				C4212927226C1F2A00441A9C /* Review.swift in Sources */,
 				C4C9F83F2269722700358156 /* UIView+addBorder.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				C48640D22251921600E5DC9B /* Spot.swift in Sources */,
