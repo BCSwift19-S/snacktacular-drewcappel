@@ -18,7 +18,7 @@ class Review {
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["title": title, "text": text, "rating": rating, "reviewerUserID": reviewerUserID, "date": date, "documentID": documentID]
+        return ["title": title, "text": text, "rating": rating, "reviewerUserID": reviewerUserID, "date": date]
     }
     
     init(title: String, text: String, rating: Int, reviewerUserID: String, date: Date, documentID: String) {
@@ -35,8 +35,7 @@ class Review {
         let text = dictionary["text"] as! String? ?? ""
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewerUserID = dictionary["reviewerUserID"] as! String
-        let date = dictionary["date"] as! Date? ?? Date() // causing a crash due to data type issue, 9.15
-        // try using today's date Date() in the convenience init below
+        let date = dictionary["date"] as! Date? ?? Date()
         self.init(title: title, text: text, rating: rating, reviewerUserID: reviewerUserID, date: date, documentID: "")
     }
     
@@ -47,36 +46,51 @@ class Review {
     
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
-                
+        
         // Create the dictionary representing the data we want to save
         let dataToSave = self.dictionary
-        
-        // if we have saved a record, we'll have a documentID
+        // if we HAVE saved a record, we'll have a documentID
         if self.documentID != "" {
             let ref = db.collection("spots").document(spot.documentID).collection("reviews").document(self.documentID)
             ref.setData(dataToSave) { (error) in
                 if let error = error {
-                    print("ERROR: updating document \(self.documentID) in spot \(spot.documentID) \(error.localizedDescription)")
+                    print("*** ERROR: updating document \(self.documentID) in spot \(spot.documentID) \(error.localizedDescription)")
                     completed(false)
                 } else {
-                    print("Document completed with refID \(ref.documentID)")
-                    completed(true)
+                    print("^^^ Document updated with ref ID \(ref.documentID)")
+                    //spot.updateAverageRating {
+                        //completed(true)
+                    //}
                 }
             }
         } else {
-            var ref: DocumentReference? = nil // let firstore create new doc ID
+            var ref: DocumentReference? = nil // Let firestore create the new documentID
             ref = db.collection("spots").document(spot.documentID).collection("reviews").addDocument(data: dataToSave) { error in
                 if let error = error {
-                    print("ERROR: creating new document in spot \(spot.documentID) \(error.localizedDescription)")
+                    print("*** ERROR: creating new document in spot \(spot.documentID) for new review documentID \(error.localizedDescription)")
                     completed(false)
                 } else {
-                    print("New doc created with refID \(ref?.documentID ?? "")")
-                    completed(true)
+                    print("^^^ new document created with ref ID \(ref?.documentID ?? "unknown")")
+                    //spot.updateAverageRating {
+                        //completed(true)
+                    //}
                 }
             }
         }
     }
     
-    
+    func deleteData(spot: Spot, completed: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("spots").document(spot.documentID).collection("reviews").document(documentID).delete() { error in
+            if let error = error {
+                print("😡 ERROR: deleting review documentID \(self.documentID) \(error.localizedDescription)")
+                completed(false)
+            } else {
+                //spot.updateAverageRating {
+                    //completed(true)
+                //}
+            }
+        }
+    }
 }
 

@@ -23,6 +23,7 @@ class Spot: NSObject, MKAnnotation {
     var longitude: CLLocationDegrees {
         return coordinate.longitude
     }
+    
     var latitude: CLLocationDegrees {
         return coordinate.latitude
     }
@@ -66,50 +67,46 @@ class Spot: NSObject, MKAnnotation {
         let averageRating = dictionary["averageRating"] as! Double? ?? 0.0
         let numberOfReviews = dictionary["numberOfReviews"] as! Int? ?? 0
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
-
         self.init(name: name, address: address, coordinate: coordinate, averageRating: averageRating, numberOfReviews: numberOfReviews, postingUserID: postingUserID, documentID: "")
     }
     
+    // NOTE: If you keep the same programming conventions (e.g. a calculated property .dictionary that converts class properties to String: Any pairs, the name of the document stored in the class as .documentID) then the only thing you'll need to change is the document path (i.e. the lines containing "spots" below.
     func saveData(completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
-        
-        // Grab userID
+        // Grab the userID
         guard let postingUserID = (Auth.auth().currentUser?.uid) else {
-            print("ERROR: Could not save data, no valid postingUserID")
+            print("*** ERROR: Could not save data because we don't have a valid postingUserID")
             return completed(false)
         }
         self.postingUserID = postingUserID
-        
         // Create the dictionary representing the data we want to save
         let dataToSave = self.dictionary
-        
-        // if we have saved a record, we'll have a documentID
+        // if we HAVE saved a record, we'll have a documentID
         if self.documentID != "" {
             let ref = db.collection("spots").document(self.documentID)
             ref.setData(dataToSave) { (error) in
                 if let error = error {
-                    print("ERROR: updating document \(self.documentID) \(error.localizedDescription)")
+                    print("*** ERROR: updating document \(self.documentID) \(error.localizedDescription)")
                     completed(false)
                 } else {
-                    print("Document completed with refID \(ref.documentID)")
+                    print("^^^ Document updated with ref ID \(ref.documentID)")
                     completed(true)
                 }
             }
         } else {
-            var ref: DocumentReference? = nil // let firstore create new doc ID
+            var ref: DocumentReference? = nil // Let firestore create the new documentID
             ref = db.collection("spots").addDocument(data: dataToSave) { error in
                 if let error = error {
-                    print("ERROR: updating document \(error.localizedDescription)")
+                    print("*** ERROR: creating new document \(error.localizedDescription)")
                     completed(false)
                 } else {
-                    print("New doc created with refID \(ref?.documentID ?? "")")
+                    print("^^^ new document created with ref ID \(ref?.documentID ?? "unknown")")
+                    self.documentID = ref!.documentID
                     completed(true)
                 }
             }
         }
     }
-    
-    
 }
 
 

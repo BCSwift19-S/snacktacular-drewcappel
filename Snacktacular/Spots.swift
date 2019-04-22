@@ -13,7 +13,6 @@ class Spots {
     var spotArray = [Spot]()
     var db: Firestore!
     
-    
     init() {
         db = Firestore.firestore()
     }
@@ -27,7 +26,6 @@ class Spots {
             self.spotArray = []
             // there are querySnapshot!.documents.count documents in teh spots snapshot
             for document in querySnapshot!.documents {
-                // You'll have to be sure you've created an initializer in the singular class (Spot, below) that acepts a dictionary.
                 let spot = Spot(dictionary: document.data())
                 spot.documentID = document.documentID
                 self.spotArray.append(spot)
@@ -35,9 +33,6 @@ class Spots {
             completed()
         }
     }
-    
-    
-    
 }
 
 
